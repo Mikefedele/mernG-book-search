@@ -21,7 +21,7 @@ title: String!
 
 type Auth {
     token: ID!
-    profile: Profile
+    user: User
   }
 
   type Query {
@@ -37,6 +37,16 @@ email: String!,
 password: String!
 ): Auth
 
+login(email: String!, password: String!): Auth
+
+saveBook(
+bookId: String!
+_id: ID!
+): Book
+
+deleteBook(bookId: String!): Book
 }
 
 `;
+
+module.exports = typeDefs
